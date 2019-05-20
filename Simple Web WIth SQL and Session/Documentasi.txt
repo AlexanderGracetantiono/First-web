@@ -1,0 +1,135 @@
+1.pembahasan
+2.pembahasan per modul
+	0.0 db_connect
+	0.1 form.css/forms.css
+	2.1 login
+	2.2 register
+	2.3 home
+	2.4 logout
+	2.5 notlog
+	2.6 process_login
+	2.7 reg_complete (registrasi selesai)
+	
+///Pembahasan///
+1. first . membuat register.php
+	////HEADER/////
+	membangun header dahulu yang nanti digunakan untuk semua page..
+	isi header sendiri 
+	#logo | name company| *mod login/mod logout
+	*berdasarkan kebutuhan
+	////register form////
+	membuat register form dengan table dan input sederhana
+	penamaan setiap input tag dengan baik agar bisa di call di system php
+	////php//////
+	php di trigger ketika submit di click, mentrigger system(itself) php di bagian atas
+	php akan membaca setiap value dari name.
+	value disimpan pada variable dengan nama yg mirip.
+	//checking///
+	varible di cek kebenaran nya...
+	(#1)nama tidak mengandung angka, dan tidak boleh kosong.. 
+		umur berupa angka saja
+		pass 1 dan pass2 harus sama
+		DLL.......
+	setiap false check.. mengubah value validasi menjadi false..
+	(validasi value default true)
+	jika tidak sesuai permintaan no (#1), maka akan mengubah value dari variableErr
+	(variableERR default "")
+	diubah menjadi perintah, dan ditampilkan pada kanan dari input Tag.
+	
+	apabila all true, dan validasi value is true..
+	maka mentrigger save to database function..
+	
+			////reg_complete.html/////
+			setelah save data selesai akan trigger ke reg.complete.html/////
+			HEADER/////
+			header dengan template sama
+			///////
+			Menampilkan informasi bahwa anda sudah ter REGISTER..
+			//session////
+			Session tidak terupdate . anda tidak automatis login.. (anggap gmail.. harus verif dahullu)
+	
+	//END/////
+2. login.php
+	////HEADER/////
+	header menggunakan same format dengan mod login
+	////email, dan password////
+	form input terletak pada kanan nama perusahaaan..
+	email dan password dimasukan, ketika submit akan mentrigger 
+	process_login.php yang nanti akan dibahas...
+3. process_login.php
+	/////validasi email dan password/////
+	bad case:
+	apabila email/ password salah, tidak matching, tidak ada, typo..
+	maka akan memunculkan tulisan gagal login...
+	2 detik akan kembali ke halaman login.php dimana akan muncul tulisan 
+	dibawah input tag password "email/password invalid"
+	
+	good case:
+	apabila email & password matching..
+	maka password, dan email akan di save ke session..
+	lalu memunculkan page anda berhasil login
+	redirect ke home.php
+	
+4. home.php
+	/////HEADER/////
+	menggunakan header sama dengan mod logout.
+	///// cek profil ,nama, dan informasi/////
+	menggunakan session dari sebelumnya.. akan menggali informasi user
+	dari database.. lalu menampilkan semua informasi yang dimiliki user..
+	tidak ada fitur edit, maupun menambahkan keterangan.
+	
+	////logout/////
+	apabila mengclik logout akan menredirect ke page logout
+5.logout.php
+	////HEADER/////
+	menggunakan template yang sama tanpa mod...
+	///end session////
+	ketika page di LOAD.... Direct load.... force Load..
+	akan meng END Session....
+	/////BODY///////
+	menampilkan informasi anda sudah log out....
+SELESAI
+	yg dibahas..
+	logout.php
+	home.php
+	login.php
+	process_login.php
+	register.php
+	reg_complete.html
+
+Tambahan.....
+1. notlog.html
+	apabila anda men direct ke home.php, tanpa login.. maka akan menuju page ini...
+	terdapat pilihan login atau register..
+2. beberapa file merupakan refrensi
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
